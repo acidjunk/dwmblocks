@@ -1,0 +1,8 @@
+#!/bin/sh
+
+batpath=/sys/class/power_supply/BAT0
+
+batcap=$(cat $batpath/capacity)
+batstat=$(cat $batpath/status)
+
+echo "BAT: $batcap% $batstat"
