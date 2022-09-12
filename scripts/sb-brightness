@@ -1,0 +1,5 @@
+#!/bin/sh
+
+bri=$(xbacklight -get)
+
+echo "BRI: $bri%"
