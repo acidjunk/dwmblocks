@@ -38,7 +38,7 @@ elif [[ $batstat = "Discharging" ]]; then
         icon=""
     fi
 elif [[ $batstat = "Full" ]]; then
-   icon="" 
+    icon="" 
 elif [[ $batstat = "Not charging" ]]; then
     icon=""
 elif [[ $batstat = "Unknown" ]]; then
