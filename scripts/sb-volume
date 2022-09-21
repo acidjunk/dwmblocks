@@ -1,5 +1,16 @@
 #!/bin/sh
 
 vol=$(pamixer --get-volume)
+mute=$(pamixer --get-mute)
 
-echo "VOL: $vol%"
+if [[ $mute == true ]]; then
+    icon="ﱝ"
+elif [[ $vol -lt 25 ]]; then
+    icon="奄"
+elif [[ $vol -lt 50 ]]; then
+    icon="奔"
+else
+    icon="墳"
+fi
+
+echo "$icon $vol%"

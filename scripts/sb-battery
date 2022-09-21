@@ -5,4 +5,44 @@ batpath=/sys/class/power_supply/BAT0
 batcap=$(cat $batpath/capacity)
 batstat=$(cat $batpath/status)
 
-echo "BAT: $batcap% $batstat"
+if [[ $batstat = "Charging" ]]; then
+    if [[ $batcap -lt 20 ]]; then
+        icon=""
+    elif [[ $batcap -lt 30 ]]; then
+        icon=""
+    elif [[ $batcap -lt 40 ]]; then
+        icon=""
+    elif [[ $batcap -lt 60 ]]; then
+        icon=""
+    elif [[ $batcap -lt 80 ]]; then
+        icon=""
+    elif [[ $batcap -lt 90 ]]; then
+        icon=""
+    else
+        icon=""
+    fi
+elif [[ $batstat = "Discharging" ]]; then
+    if [[ $batcap -lt 20 ]]; then
+        icon=""
+    elif [[ $batcap -lt 30 ]]; then
+        icon=""
+    elif [[ $batcap -lt 40 ]]; then
+        icon=""
+    elif [[ $batcap -lt 60 ]]; then
+        icon=""
+    elif [[ $batcap -lt 80 ]]; then
+        icon=""
+    elif [[ $batcap -lt 90 ]]; then
+        icon=""
+    else
+        icon=""
+    fi
+elif [[ $batstat = "Full" ]]; then
+   icon="" 
+elif [[ $batstat = "Not charging" ]]; then
+    icon=""
+elif [[ $batstat = "Unknown" ]]; then
+    icon=""
+fi
+
+echo "$icon $batcap%"

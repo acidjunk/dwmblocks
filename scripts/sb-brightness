@@ -2,4 +2,20 @@
 
 bri=$(xbacklight -get)
 
-echo "BRI: $bri%"
+if [[ $bri -lt 10 ]]; then
+    icon=""
+elif [[ $bri -lt 20 ]]; then
+    icon=""
+elif [[ $bri -lt 30 ]]; then
+    icon=""
+elif [[ $bri -lt 40 ]]; then
+    icon=""
+elif [[ $bri -lt 50 ]]; then
+    icon=""
+elif [[ $bri -lt 60 ]]; then
+    icon=""
+else
+    icon=""
+fi
+
+echo "$icon $bri%"
